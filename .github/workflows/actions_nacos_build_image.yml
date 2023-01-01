@@ -35,16 +35,16 @@ jobs:
           echo '=====开始mvn install&&package====='
           mvn install -DskipTests=true && mvn package -DskipTests=true
 
-      - name: Build vue_mogu_admin and vue_mogu_web
+      - name: Build vue_mosbrh_admin and vue_mosbrh_web
         run: |
-          echo '=====开始安装Vue_mogu_admin依赖====='
-          cd ./vue_mogu_admin
+          echo '=====开始安装Vue_mosbrh_admin依赖====='
+          cd ./vue_mosbrh_admin
           npm install
           npm run build
           cd ..
 
-          echo '=====开始安装Vue_mogu_web依赖====='
-          cd ./vue_mogu_web
+          echo '=====开始安装Vue_mosbrh_web依赖====='
+          cd ./vue_mosbrh_web
           npm install
           npm run build
           cd ..
@@ -54,43 +54,43 @@ jobs:
         run: |
 
           echo '=====开始构建镜像====='
-          echo '=====开始构建mogu_admin====='
-          cd mogu_admin
+          echo '=====开始构建mosbrh_admin====='
+          cd mosbrh_admin
           mvn docker:build
           cd ..
 
-          echo '=====开始构建mogu_gateway====='
-          cd mogu_gateway
+          echo '=====开始构建mosbrh_gateway====='
+          cd mosbrh_gateway
           mvn docker:build
           cd ..
 
-          echo '=====开始构建mogu_monitor====='
-          cd mogu_monitor
+          echo '=====开始构建mosbrh_monitor====='
+          cd mosbrh_monitor
           mvn docker:build
           cd ..
 
-          echo '=====开始构建mogu_picture====='
-          cd mogu_picture
+          echo '=====开始构建mosbrh_picture====='
+          cd mosbrh_picture
           mvn docker:build
           cd ..
 
-          echo '=====开始构建mogu_search====='
-          cd mogu_search
+          echo '=====开始构建mosbrh_search====='
+          cd mosbrh_search
           mvn docker:build
           cd ..
 
-          echo '=====开始构建mogu_sms====='
-          cd mogu_sms
+          echo '=====开始构建mosbrh_sms====='
+          cd mosbrh_sms
           mvn docker:build
           cd ..
 
-          echo '=====开始构建mogu_spider====='
-          cd mogu_spider
+          echo '=====开始构建mosbrh_spider====='
+          cd mosbrh_spider
           mvn docker:build
           cd ..
 
-          echo '=====开始构建mogu_web====='
-          cd mogu_web
+          echo '=====开始构建mosbrh_web====='
+          cd mosbrh_web
           mvn docker:build
           cd ..
 
@@ -101,13 +101,13 @@ jobs:
         run: |
 
           echo '=====开始构建镜像====='
-          echo '=====开始构建vue_mogu_admin====='
-          cd vue_mogu_admin
-          docker build -t registry.cn-shenzhen.aliyuncs.com/mogublog/vue_mogu_admin .
+          echo '=====开始构建vue_mosbrh_admin====='
+          cd vue_mosbrh_admin
+          docker build -t registry.cn-shenzhen.aliyuncs.com/mosbrhblog/vue_mosbrh_admin .
           cd ..
 
-          cd vue_mogu_web
-          docker build -t registry.cn-shenzhen.aliyuncs.com/mogublog/vue_mogu_web .
+          cd vue_mosbrh_web
+          docker build -t registry.cn-shenzhen.aliyuncs.com/mosbrhblog/vue_mosbrh_web .
           cd ..
 
           echo '=====镜像构建结束====='
@@ -123,35 +123,35 @@ jobs:
       - name: Push Docker Image
         run: |
           echo '=====开始上传镜像====='
-          echo '=====开始上传mogu_admin====='
-          docker push registry.cn-shenzhen.aliyuncs.com/mogublog/mogu_admin
+          echo '=====开始上传mosbrh_admin====='
+          docker push registry.cn-shenzhen.aliyuncs.com/mosbrhblog/mosbrh_admin
 
-          echo '=====开始上传mogu_gateway====='
-          docker push registry.cn-shenzhen.aliyuncs.com/mogublog/mogu_gateway
+          echo '=====开始上传mosbrh_gateway====='
+          docker push registry.cn-shenzhen.aliyuncs.com/mosbrhblog/mosbrh_gateway
 
-          echo '=====开始上传mogu_monitor====='
-          docker push registry.cn-shenzhen.aliyuncs.com/mogublog/mogu_monitor
+          echo '=====开始上传mosbrh_monitor====='
+          docker push registry.cn-shenzhen.aliyuncs.com/mosbrhblog/mosbrh_monitor
 
-          echo '=====开始上传mogu_picture====='
-          docker push registry.cn-shenzhen.aliyuncs.com/mogublog/mogu_picture
+          echo '=====开始上传mosbrh_picture====='
+          docker push registry.cn-shenzhen.aliyuncs.com/mosbrhblog/mosbrh_picture
 
-          echo '=====开始上传mogu_search====='
-          docker push registry.cn-shenzhen.aliyuncs.com/mogublog/mogu_search
+          echo '=====开始上传mosbrh_search====='
+          docker push registry.cn-shenzhen.aliyuncs.com/mosbrhblog/mosbrh_search
 
-          echo '=====开始上传mogu_sms====='
-          docker push registry.cn-shenzhen.aliyuncs.com/mogublog/mogu_sms
+          echo '=====开始上传mosbrh_sms====='
+          docker push registry.cn-shenzhen.aliyuncs.com/mosbrhblog/mosbrh_sms
 
-          echo '=====开始上传mogu_spider====='
-          docker push registry.cn-shenzhen.aliyuncs.com/mogublog/mogu_spider
+          echo '=====开始上传mosbrh_spider====='
+          docker push registry.cn-shenzhen.aliyuncs.com/mosbrhblog/mosbrh_spider
 
-          echo '=====开始上传mogu_web====='
-          docker push registry.cn-shenzhen.aliyuncs.com/mogublog/mogu_web
+          echo '=====开始上传mosbrh_web====='
+          docker push registry.cn-shenzhen.aliyuncs.com/mosbrhblog/mosbrh_web
 
-          echo '=====开始上传vue_mogu_admin====='
-          docker push registry.cn-shenzhen.aliyuncs.com/mogublog/vue_mogu_admin
+          echo '=====开始上传vue_mosbrh_admin====='
+          docker push registry.cn-shenzhen.aliyuncs.com/mosbrhblog/vue_mosbrh_admin
 
-          echo '=====开始上传vue_mogu_web====='
-          docker push registry.cn-shenzhen.aliyuncs.com/mogublog/vue_mogu_web
+          echo '=====开始上传vue_mosbrh_web====='
+          docker push registry.cn-shenzhen.aliyuncs.com/mosbrhblog/vue_mosbrh_web
 
           echo '=====镜像上传结束====='
 

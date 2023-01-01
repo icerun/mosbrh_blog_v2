@@ -31,6 +31,6 @@ def replace(file, newStr):
     with io.open(file,"w",encoding="utf-8") as f:
         f.write(fileData)
 
-replace("../config/vue_mogu_admin.env", myIp)
-replace("../config/vue_mogu_web.env", myIp)
+replace("../config/vue_mosbrh_admin.env", myIp)
+replace("../config/vue_mosbrh_web.env", myIp)
 

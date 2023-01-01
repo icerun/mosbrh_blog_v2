@@ -1,0 +1,19 @@
+version: '3'
+services:
+  #授权服务
+  mosbrh_sms:
+    image: registry.cn-shenzhen.aliyuncs.com/mosbrhblog/mosbrh_sms:latest
+    container_name: mosbrh_sms
+    restart: always
+    ports:
+      - 8604:8604
+    networks:
+      - mosbrh
+    environment:
+      - COMPOSE_PROJECT_NAME=mosbrh_sms
+    volumes:
+      - ../log/:/logs/
+      - ../config/mosbrh_sms/:/config/
+networks:
+  mosbrh:
+    external: true

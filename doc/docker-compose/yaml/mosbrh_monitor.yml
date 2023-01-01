@@ -1,0 +1,19 @@
+version: '3'
+services:
+  #授权服务
+  mosbrh_mointor:
+    image: registry.cn-shenzhen.aliyuncs.com/mosbrhblog/mosbrh_monitor:latest
+    container_name: mosbrh_monitor
+    restart: always
+    ports:
+      - 8606:8606
+    networks:
+      - mosbrh
+    environment:
+      - COMPOSE_PROJECT_NAME=mosbrh_monitor
+    volumes:
+      - ../log/:/logs/
+      - ../config/mosbrh_monitor/:/config/
+networks:
+  mosbrh:
+    external: true

@@ -1,0 +1,20 @@
+version: '3'
+services:
+  #授权服务
+  mosbrh_picture:
+    image: registry.cn-shenzhen.aliyuncs.com/mosbrhblog/mosbrh_picture:latest
+    container_name: mosbrh_picture
+    restart: always
+    ports:
+      - 8602:8602
+    networks:
+      - mosbrh
+    environment:
+      - COMPOSE_PROJECT_NAME=mosbrh_picture
+    volumes:
+      - ../log/:/logs/
+      - ../config/mosbrh_picture/:/config/
+      - ../data/mosbrh_data/:/home/mosbrh_blog/mosbrh_data/
+networks:
+  mosbrh:
+    external: true

@@ -4,99 +4,99 @@ filebeat.inputs:
   - type: log
     enabled: true
     paths:
-      - ../../../log/mogu-web/*.log
+      - ../../../log/mosbrh-web/*.log
     fields:
-      docType: mogu_web-log
-      project: mogu_web
-      from: mogu_web
+      docType: mosbrh_web-log
+      project: mosbrh_web
+      from: mosbrh_web
     fields_under_root: true
     multiline:
-      pattern: '^\[mogu-web:[\d\.:]+\]'
+      pattern: '^\[mosbrh-web:[\d\.:]+\]'
       negate: true
       match: after
       timeout: 2s
   - type: log
     enabled: true
     paths:
-      - ../../../log/mogu-admin/*.log
+      - ../../../log/mosbrh-admin/*.log
     fields:
-      docType: mogu_admin-log
-      project: mogu_admin
-      from: mogu_admin
+      docType: mosbrh_admin-log
+      project: mosbrh_admin
+      from: mosbrh_admin
     fields_under_root: true
     multiline:
-      pattern: '^\[mogu-admin:[\d\.:]+\]'
+      pattern: '^\[mosbrh-admin:[\d\.:]+\]'
       negate: true
       match: after
       timeout: 2s
   - type: log
     enabled: true
     paths:
-      - ../../../log/mogu-sms/*.log
+      - ../../../log/mosbrh-sms/*.log
     fields:
-      docType: mogu_sms-log
-      project: mogu_sms
-      from: mogu_sms
+      docType: mosbrh_sms-log
+      project: mosbrh_sms
+      from: mosbrh_sms
     fields_under_root: true
     multiline:
-      pattern: '^\[mogu-sms:[\d\.:]+\]'
+      pattern: '^\[mosbrh-sms:[\d\.:]+\]'
       negate: true
       match: after
       timeout: 2s
   - type: log
     enabled: true
     paths:
-      - ../../../log/mogu-picture/*.log
+      - ../../../log/mosbrh-picture/*.log
     fields:
-      docType: mogu_picture-log
-      project: mogu_picture
-      from: mogu_picture
+      docType: mosbrh_picture-log
+      project: mosbrh_picture
+      from: mosbrh_picture
     fields_under_root: true
     multiline:
-      pattern: '^\[mogu-picture:[\d\.:]+\]'
+      pattern: '^\[mosbrh-picture:[\d\.:]+\]'
       negate: true
       match: after
       timeout: 2s
   - type: log
     enabled: true
     paths:
-      - ../../../log/mogu-gateway/*.log
+      - ../../../log/mosbrh-gateway/*.log
     fields:
-      docType: mogu_gateway-log
-      project: mogu_gateway
-      from: mogu_gateway
+      docType: mosbrh_gateway-log
+      project: mosbrh_gateway
+      from: mosbrh_gateway
     fields_under_root: true
     multiline:
-      pattern: '^\[mogu-gateway:[\d\.:]+\]'
+      pattern: '^\[mosbrh-gateway:[\d\.:]+\]'
       negate: true
       match: after
       timeout: 2s
   - type: log
     enabled: true
     paths:
-      - ../../../log/mogu-monitor/*.log
+      - ../../../log/mosbrh-monitor/*.log
     fields:
-      docType: mogu_monitor-log
-      project: mogu_monitor
-      from: mogu_monitor
+      docType: mosbrh_monitor-log
+      project: mosbrh_monitor
+      from: mosbrh_monitor
     fields_under_root: true
     multiline:
-      pattern: '^\[mogu-monitor:[\d\.:]+\]'
+      pattern: '^\[mosbrh-monitor:[\d\.:]+\]'
       negate: true
       match: after
       timeout: 2s
   - type: log
     enabled: true
     paths:
-      - ../../../log/mogu-search/*.log
+      - ../../../log/mosbrh-search/*.log
     fields:
-      docType: mogu_search-log
-      project: mogu_search
-      from: mogu_search
+      docType: mosbrh_search-log
+      project: mosbrh_search
+      from: mosbrh_search
     fields_under_root: true
-    pipeline: mogu-log
+    pipeline: mosbrh-log
     multiline:
-      pattern: '^\[mogu-search:[\d\.:]+\]'
+      pattern: '^\[mosbrh-search:[\d\.:]+\]'
       negate: true
       match: after
       timeout: 2s

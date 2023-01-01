@@ -9,8 +9,8 @@ echo '=====开始清空博客中的数据====='
 echo '=====开始清空minio====='
 rm -rf ./minio_data/*
 
-echo '=====开始清空mogu_data数据====='
-#rm -rf ./mogu_data/*
+echo '=====开始清空mosbrh_data数据====='
+#rm -rf ./mosbrh_data/*
 
 echo '=====开始清空mysql数据====='
 rm -rf ./mysql_data/*

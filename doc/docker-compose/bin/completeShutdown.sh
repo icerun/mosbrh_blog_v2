@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo '=====开始结束运行蘑菇博客服务====='
+echo '=====开始结束运行墨上笔如花博客服务====='
 
 echo '=====结束运行portainer可视化工具====='
 docker-compose -f ../yaml/portainer.yml down
@@ -17,8 +17,8 @@ docker-compose -f ../yaml/rabbitmq.yml down
 echo '=====结束运行redis====='
 docker-compose -f ../yaml/redis.yml down
 
-echo '=====结束运行mogu_data====='
-docker-compose -f ../yaml/mogu_data.yml down
+echo '=====结束运行mosbrh_data====='
+docker-compose -f ../yaml/mosbrh_data.yml down
 
 echo '=====结束运行zipkin====='
 docker-compose -f ../yaml/zipkin.yml down
@@ -34,37 +34,37 @@ echo '=========================='
 echo '=====结束后台服务运行====='
 echo '=========================='
 
-echo '=====结束运行mogu_admin====='
-docker-compose -f ../yaml/mogu_admin.yml down
+echo '=====结束运行mosbrh_admin====='
+docker-compose -f ../yaml/mosbrh_admin.yml down
 
-echo '=====结束运行mogu_picture====='
-docker-compose -f ../yaml/mogu_picture.yml down
+echo '=====结束运行mosbrh_picture====='
+docker-compose -f ../yaml/mosbrh_picture.yml down
 
-echo '=====结束运行mogu_sms====='
-docker-compose -f ../yaml/mogu_sms.yml down
+echo '=====结束运行mosbrh_sms====='
+docker-compose -f ../yaml/mosbrh_sms.yml down
 
-echo '=====结束运行mogu_web====='
-docker-compose -f ../yaml/mogu_web.yml down
+echo '=====结束运行mosbrh_web====='
+docker-compose -f ../yaml/mosbrh_web.yml down
 
-echo '=====结束运行mogu_search====='
-docker-compose -f ../yaml/mogu_search.yml down
+echo '=====结束运行mosbrh_search====='
+docker-compose -f ../yaml/mosbrh_search.yml down
 
-echo '=====结束运行mogu_monitor====='
-docker-compose -f ../yaml/mogu_monitor.yml down
+echo '=====结束运行mosbrh_monitor====='
+docker-compose -f ../yaml/mosbrh_monitor.yml down
 
-echo '=====结束运行mogu_gateway====='
-docker-compose -f ../yaml/mogu_gateway.yml down
+echo '=====结束运行mosbrh_gateway====='
+docker-compose -f ../yaml/mosbrh_gateway.yml down
 
 echo '=========================='
 echo '=====结束前台服务运行====='
 echo '=========================='
 
-echo '=====结束运行vue_mogu_admin====='
-docker-compose -f ../yaml/vue_mogu_admin.yml down
+echo '=====结束运行vue_mosbrh_admin====='
+docker-compose -f ../yaml/vue_mosbrh_admin.yml down
 
 
-echo '=====结束运行vue_mogu_web====='
-docker-compose -f ../yaml/vue_mogu_web.yml down
+echo '=====结束运行vue_mosbrh_web====='
+docker-compose -f ../yaml/vue_mosbrh_web.yml down
 
 echo '=============================='
 echo '=====所有服务已经结束运行====='

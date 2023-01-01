@@ -1,0 +1,16 @@
+version: '3'
+services:
+  #授权服务
+  mosbrh_blog_go:
+    image: registry.cn-shenzhen.aliyuncs.com/mosbrhblog/mosbrh_blog_go:latest
+    container_name: mosbrh_blog_go
+    restart: always
+    ports:
+      - 8607:8607
+    networks:
+      - mosbrh
+    volumes:
+      - ../config/mosbrh_blog_go/app.conf:/go/src/mosbrh_blog_go/conf/app.conf
+networks:
+  mosbrh:
+    external: true

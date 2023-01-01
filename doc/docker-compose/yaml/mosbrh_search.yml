@@ -1,0 +1,19 @@
+version: '3'
+services:
+  #授权服务
+  mosbrh_search:
+    image: registry.cn-shenzhen.aliyuncs.com/mosbrhblog/mosbrh_search:latest
+    container_name: mosbrh_search
+    restart: always
+    ports:
+      - 8605:8605
+    networks:
+      - mosbrh
+    environment:
+      - COMPOSE_PROJECT_NAME=mosbrh_search
+    volumes:
+      - ../log/:/logs/
+      - ../config/mosbrh_search/:/config/
+networks:
+  mosbrh:
+    external: true

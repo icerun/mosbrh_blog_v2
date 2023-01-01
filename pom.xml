@@ -2,11 +2,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.moxi</groupId>
-    <artifactId>mogu_blog</artifactId>
+    <groupId>com.inkfoxer</groupId>
+    <artifactId>mosbrh_blog</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>mogu_blog</name>
+    <name>mosbrh_blog</name>
     <description>a blog web</description>
 
     <properties>
@@ -50,19 +50,19 @@
 
 
     <modules>
-        <module>mogu_utils</module>
-        <module>mogu_base</module>
-        <module>mogu_xo</module>
-        <module>mogu_admin</module>
-        <module>mogu_web</module>
-        <module>mogu_picture</module>
-        <module>mogu_sms</module>
-        <module>mogu_search</module>
-        <module>mogu_monitor</module>
-        <module>mogu_gateway</module>
-        <module>mogu_zipkin</module>
-        <module>mogu_spider</module>
-        <module>mogu_commons</module>
+        <module>mosbrh_utils</module>
+        <module>mosbrh_base</module>
+        <module>mosbrh_xo</module>
+        <module>mosbrh_admin</module>
+        <module>mosbrh_web</module>
+        <module>mosbrh_picture</module>
+        <module>mosbrh_sms</module>
+        <module>mosbrh_search</module>
+        <module>mosbrh_monitor</module>
+        <module>mosbrh_gateway</module>
+        <module>mosbrh_zipkin</module>
+        <module>mosbrh_spider</module>
+        <module>mosbrh_commons</module>
     </modules>
 
     <dependencyManagement>

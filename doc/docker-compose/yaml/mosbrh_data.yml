@@ -1,0 +1,18 @@
+version: '3'
+services:
+  #授权服务
+  mosbrh_data:
+    image: registry.cn-shenzhen.aliyuncs.com/mosbrhblog/nginx
+    container_name: mosbrh_data
+    restart: always
+    ports:
+      - 80:80  
+      - 8600:8600
+    networks:
+      - mosbrh
+    volumes:
+      - ../data/mosbrh_data/:/home/mosbrh_blog/mosbrh_data/
+      - ../config/mosbrh_data.conf:/etc/nginx/conf.d/default.conf
+networks:
+  mosbrh:
+    external: true

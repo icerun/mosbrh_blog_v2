@@ -1,0 +1,15 @@
+package com.inkfoxer.mosbrhblog.spider.entity;
+
+import com.inkfoxer.mosbrhblog.base.vo.FileVO;
+import lombok.Data;
+
+/**
+ * 图片对象
+ *
+ * @author 灵雨
+ * @date 2021年1月8日16:55:42
+ */
+@Data
+public class PictureSpider extends FileVO {
+
+}

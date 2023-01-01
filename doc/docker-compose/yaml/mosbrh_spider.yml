@@ -1,0 +1,18 @@
+version: '3'
+services:
+  #授权服务
+  mosbrh_spider:
+    image: registry.cn-shenzhen.aliyuncs.com/mosbrhblog/mosbrh_spider:latest
+    container_name: mosbrh_spider
+    restart: always
+    ports:
+      - 8608:8608
+    networks:
+      - mosbrh
+    environment:
+      - COMPOSE_PROJECT_NAME=mosbrh_spider
+    volumes:
+      - ../log/:/logs/
+networks:
+  mosbrh:
+    external: true

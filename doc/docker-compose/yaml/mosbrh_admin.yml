@@ -1,0 +1,19 @@
+version: '3'
+services:
+  #授权服务
+  mosbrh_admin:
+    image: registry.cn-shenzhen.aliyuncs.com/mosbrhblog/mosbrh_admin:latest
+    container_name: mosbrh_admin
+    restart: always
+    ports:
+      - 8601:8601
+    networks:
+      - mosbrh
+    environment:
+      - COMPOSE_PROJECT_NAME=mosbrh_admin
+    volumes:
+      - ../log/:/logs/
+      - ../config/mosbrh_admin/:/config/
+networks:
+  mosbrh:
+    external: true

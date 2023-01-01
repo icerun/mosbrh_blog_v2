@@ -1,4 +1,4 @@
-#name: mogu_nacos CI/CD/DEV
+#name: mosbrh_nacos CI/CD/DEV
 #
 #on:
 #  push:
@@ -26,15 +26,15 @@
 #        ls -l ~/.ssh/
 #    - name: Download config file and replace
 #      run: |
-#        git clone git@github.com:moxi624/mogu_prod_configuration.git
-#        mv -f ./mogu_prod_configuration/dev_nacos/mogu_admin/bootstrap.yml ./mogu_admin/src/main/resources/bootstrap.yml
-#        mv -f ./mogu_prod_configuration/dev_nacos/mogu_picture/bootstrap.yml ./mogu_picture/src/main/resources/bootstrap.yml
-#        mv -f ./mogu_prod_configuration/dev_nacos/mogu_sms/bootstrap.yml ./mogu_sms/src/main/resources/bootstrap.yml
-#        mv -f ./mogu_prod_configuration/dev_nacos/mogu_web/bootstrap.yml ./mogu_web/src/main/resources/bootstrap.yml
-#        mv -f ./mogu_prod_configuration/dev_nacos/mogu_search/bootstrap.yml ./mogu_search/src/main/resources/bootstrap.yml
-#        mv -f ./mogu_prod_configuration/dev_nacos/mogu_gateway/bootstrap.yml ./mogu_gateway/src/main/resources/bootstrap.yml
-#        mv -f ./mogu_prod_configuration/dev_nacos/vue_mogu_admin/.env ./vue_mogu_admin/.env
-#        mv -f ./mogu_prod_configuration/dev_nacos/vue_mogu_web/.env ./vue_mogu_web/.env
+#        git clone git@github.com:inkfoxer624/mosbrh_prod_configuration.git
+#        mv -f ./mosbrh_prod_configuration/dev_nacos/mosbrh_admin/bootstrap.yml ./mosbrh_admin/src/main/resources/bootstrap.yml
+#        mv -f ./mosbrh_prod_configuration/dev_nacos/mosbrh_picture/bootstrap.yml ./mosbrh_picture/src/main/resources/bootstrap.yml
+#        mv -f ./mosbrh_prod_configuration/dev_nacos/mosbrh_sms/bootstrap.yml ./mosbrh_sms/src/main/resources/bootstrap.yml
+#        mv -f ./mosbrh_prod_configuration/dev_nacos/mosbrh_web/bootstrap.yml ./mosbrh_web/src/main/resources/bootstrap.yml
+#        mv -f ./mosbrh_prod_configuration/dev_nacos/mosbrh_search/bootstrap.yml ./mosbrh_search/src/main/resources/bootstrap.yml
+#        mv -f ./mosbrh_prod_configuration/dev_nacos/mosbrh_gateway/bootstrap.yml ./mosbrh_gateway/src/main/resources/bootstrap.yml
+#        mv -f ./mosbrh_prod_configuration/dev_nacos/vue_mosbrh_admin/.env ./vue_mosbrh_admin/.env
+#        mv -f ./mosbrh_prod_configuration/dev_nacos/vue_mosbrh_web/.env ./vue_mosbrh_web/.env
 #    - name: Build Java jar
 #      run: |
 #        mvn clean install
@@ -42,27 +42,27 @@
 #      uses: actions/setup-node@v1
 #      with:
 #        node-version: 12.x
-#    - name: Build vue_mogu_admin and vue_mogu_web
+#    - name: Build vue_mosbrh_admin and vue_mosbrh_web
 #      run: |
-#        cd ./vue_mogu_admin
+#        cd ./vue_mosbrh_admin
 #        npm install
 #        npm run build
 #        cd ..
-#        cd ./vue_mogu_web
+#        cd ./vue_mosbrh_web
 #        npm install
 #        npm run build
 #        cd ..
 #    - name: Move files and compress
 #      run: |
 #        mkdir -p transfer_files
-#        mv ./mogu_admin/target/mogu_admin-0.0.1-SNAPSHOT.jar ./transfer_files/mogu_admin-0.0.1-SNAPSHOT.jar
-#        mv ./mogu_sms/target/mogu_sms-0.0.1-SNAPSHOT.jar ./transfer_files/mogu_sms-0.0.1-SNAPSHOT.jar
-#        mv ./mogu_picture/target/mogu_picture-0.0.1-SNAPSHOT.jar ./transfer_files/mogu_picture-0.0.1-SNAPSHOT.jar
-#        mv ./mogu_web/target/mogu_web-0.0.1-SNAPSHOT.jar ./transfer_files/mogu_web-0.0.1-SNAPSHOT.jar
-#        mv ./mogu_search/target/mogu_search-0.0.1-SNAPSHOT.jar ./transfer_files/mogu_search-0.0.1-SNAPSHOT.jar
-#        mv ./mogu_gateway/target/mogu_gateway-0.0.1-SNAPSHOT.jar ./transfer_files/mogu_gateway-0.0.1-SNAPSHOT.jar
-#        mv ./vue_mogu_web/dist ./transfer_files/web_dist
-#        mv ./vue_mogu_admin/dist ./transfer_files/admin_dist
+#        mv ./mosbrh_admin/target/mosbrh_admin-0.0.1-SNAPSHOT.jar ./transfer_files/mosbrh_admin-0.0.1-SNAPSHOT.jar
+#        mv ./mosbrh_sms/target/mosbrh_sms-0.0.1-SNAPSHOT.jar ./transfer_files/mosbrh_sms-0.0.1-SNAPSHOT.jar
+#        mv ./mosbrh_picture/target/mosbrh_picture-0.0.1-SNAPSHOT.jar ./transfer_files/mosbrh_picture-0.0.1-SNAPSHOT.jar
+#        mv ./mosbrh_web/target/mosbrh_web-0.0.1-SNAPSHOT.jar ./transfer_files/mosbrh_web-0.0.1-SNAPSHOT.jar
+#        mv ./mosbrh_search/target/mosbrh_search-0.0.1-SNAPSHOT.jar ./transfer_files/mosbrh_search-0.0.1-SNAPSHOT.jar
+#        mv ./mosbrh_gateway/target/mosbrh_gateway-0.0.1-SNAPSHOT.jar ./transfer_files/mosbrh_gateway-0.0.1-SNAPSHOT.jar
+#        mv ./vue_mosbrh_web/dist ./transfer_files/web_dist
+#        mv ./vue_mosbrh_admin/dist ./transfer_files/admin_dist
 #        tar -zcvf  transfer_files.tar.gz transfer_files/
 #    - name: Scp file to aliyun
 #      uses: appleboy/scp-action@master
@@ -84,115 +84,115 @@
 #          cd /home
 #          tar -zxvf /home/transfer_files.tar.gz
 #
-#          echo "################# mogu_gateway moving #################"
+#          echo "################# mosbrh_gateway moving #################"
 #
-#          if [ -f "/home/mogu_blog/mogu_gateway/mogu_gateway-0.0.1-SNAPSHOT.jar.bak" ];then
-#            echo "mogu_gateway.jar.bak exists and is being deleted"
-#            rm -f /home/mogu_blog/mogu_gateway/mogu_gateway-0.0.1-SNAPSHOT.jar.bak
+#          if [ -f "/home/mosbrh_blog/mosbrh_gateway/mosbrh_gateway-0.0.1-SNAPSHOT.jar.bak" ];then
+#            echo "mosbrh_gateway.jar.bak exists and is being deleted"
+#            rm -f /home/mosbrh_blog/mosbrh_gateway/mosbrh_gateway-0.0.1-SNAPSHOT.jar.bak
 #          fi
-#          if [ -f "/home/mogu_blog/mogu_gateway/mogu_gateway-0.0.1-SNAPSHOT.jar" ];then
-#            echo "mogu_gateway.jar exists and is being backup"
-#            mv /home/mogu_blog/mogu_gateway/mogu_gateway-0.0.1-SNAPSHOT.jar /home/mogu_blog/mogu_gateway/mogu_gateway-0.0.1-SNAPSHOT.jar.bak
+#          if [ -f "/home/mosbrh_blog/mosbrh_gateway/mosbrh_gateway-0.0.1-SNAPSHOT.jar" ];then
+#            echo "mosbrh_gateway.jar exists and is being backup"
+#            mv /home/mosbrh_blog/mosbrh_gateway/mosbrh_gateway-0.0.1-SNAPSHOT.jar /home/mosbrh_blog/mosbrh_gateway/mosbrh_gateway-0.0.1-SNAPSHOT.jar.bak
 #          fi
-#          mv /home/transfer_files/mogu_gateway-0.0.1-SNAPSHOT.jar /home/mogu_blog/mogu_gateway/mogu_gateway-0.0.1-SNAPSHOT.jar
+#          mv /home/transfer_files/mosbrh_gateway-0.0.1-SNAPSHOT.jar /home/mosbrh_blog/mosbrh_gateway/mosbrh_gateway-0.0.1-SNAPSHOT.jar
 #
 #
-#          echo "################# mogu_admin moving #################"
+#          echo "################# mosbrh_admin moving #################"
 #
-#          if [ -f "/home/mogu_blog/mogu_admin/mogu_admin-0.0.1-SNAPSHOT.jar.bak" ];then
-#            echo "mogu_admin.jar.bak exists and is being deleted"
-#            rm -f /home/mogu_blog/mogu_admin/mogu_admin-0.0.1-SNAPSHOT.jar.bak
+#          if [ -f "/home/mosbrh_blog/mosbrh_admin/mosbrh_admin-0.0.1-SNAPSHOT.jar.bak" ];then
+#            echo "mosbrh_admin.jar.bak exists and is being deleted"
+#            rm -f /home/mosbrh_blog/mosbrh_admin/mosbrh_admin-0.0.1-SNAPSHOT.jar.bak
 #          fi
-#          if [ -f "/home/mogu_blog/mogu_admin/mogu_admin-0.0.1-SNAPSHOT.jar" ];then
-#            echo "mogu_admin.jar exists and is being backup"
-#            mv /home/mogu_blog/mogu_admin/mogu_admin-0.0.1-SNAPSHOT.jar /home/mogu_blog/mogu_admin/mogu_admin-0.0.1-SNAPSHOT.jar.bak
+#          if [ -f "/home/mosbrh_blog/mosbrh_admin/mosbrh_admin-0.0.1-SNAPSHOT.jar" ];then
+#            echo "mosbrh_admin.jar exists and is being backup"
+#            mv /home/mosbrh_blog/mosbrh_admin/mosbrh_admin-0.0.1-SNAPSHOT.jar /home/mosbrh_blog/mosbrh_admin/mosbrh_admin-0.0.1-SNAPSHOT.jar.bak
 #          fi
-#          mv /home/transfer_files/mogu_admin-0.0.1-SNAPSHOT.jar /home/mogu_blog/mogu_admin/mogu_admin-0.0.1-SNAPSHOT.jar
+#          mv /home/transfer_files/mosbrh_admin-0.0.1-SNAPSHOT.jar /home/mosbrh_blog/mosbrh_admin/mosbrh_admin-0.0.1-SNAPSHOT.jar
 #
 #
-#          echo "################# mogu_sms moving #################"
+#          echo "################# mosbrh_sms moving #################"
 #
-#          if [ -f "/home/mogu_blog/mogu_sms/mogu_sms-0.0.1-SNAPSHOT.jar.bak" ];then
-#            echo "mogu_sms.jar.bak exists and is being deleted"
-#            rm -f /home/mogu_blog/mogu_sms/mogu_sms-0.0.1-SNAPSHOT.jar.bak
+#          if [ -f "/home/mosbrh_blog/mosbrh_sms/mosbrh_sms-0.0.1-SNAPSHOT.jar.bak" ];then
+#            echo "mosbrh_sms.jar.bak exists and is being deleted"
+#            rm -f /home/mosbrh_blog/mosbrh_sms/mosbrh_sms-0.0.1-SNAPSHOT.jar.bak
 #          fi
-#          if [ -f "/home/mogu_blog/mogu_admin/mogu_admin-0.0.1-SNAPSHOT.jar" ];then
-#            echo "mogu_sms.jar exists and is being backup"
-#            mv /home/mogu_blog/mogu_sms/mogu_sms-0.0.1-SNAPSHOT.jar /home/mogu_blog/mogu_sms/mogu_sms-0.0.1-SNAPSHOT.jar.bak
+#          if [ -f "/home/mosbrh_blog/mosbrh_admin/mosbrh_admin-0.0.1-SNAPSHOT.jar" ];then
+#            echo "mosbrh_sms.jar exists and is being backup"
+#            mv /home/mosbrh_blog/mosbrh_sms/mosbrh_sms-0.0.1-SNAPSHOT.jar /home/mosbrh_blog/mosbrh_sms/mosbrh_sms-0.0.1-SNAPSHOT.jar.bak
 #          fi
-#          mv /home/transfer_files/mogu_sms-0.0.1-SNAPSHOT.jar /home/mogu_blog/mogu_sms/mogu_sms-0.0.1-SNAPSHOT.jar
+#          mv /home/transfer_files/mosbrh_sms-0.0.1-SNAPSHOT.jar /home/mosbrh_blog/mosbrh_sms/mosbrh_sms-0.0.1-SNAPSHOT.jar
 #
-#          echo "################# mogu_picture moving #################"
+#          echo "################# mosbrh_picture moving #################"
 #
-#          if [ -f "/home/mogu_blog/mogu_picture/mogu_picture-0.0.1-SNAPSHOT.jar.bak" ];then
-#            echo "mogu_picture.jar.bak exists and is being deleted"
-#            rm -f /home/mogu_blog/mogu_picture/mogu_picture-0.0.1-SNAPSHOT.jar.bak
+#          if [ -f "/home/mosbrh_blog/mosbrh_picture/mosbrh_picture-0.0.1-SNAPSHOT.jar.bak" ];then
+#            echo "mosbrh_picture.jar.bak exists and is being deleted"
+#            rm -f /home/mosbrh_blog/mosbrh_picture/mosbrh_picture-0.0.1-SNAPSHOT.jar.bak
 #          fi
-#          if [ -f "/home/mogu_blog/mogu_picture/mogu_picture-0.0.1-SNAPSHOT.jar" ];then
-#            echo "mogu_picture.jar exists and is being backup"
-#            mv /home/mogu_blog/mogu_picture/mogu_picture-0.0.1-SNAPSHOT.jar /home/mogu_blog/mogu_picture/mogu_picture-0.0.1-SNAPSHOT.jar.bak
+#          if [ -f "/home/mosbrh_blog/mosbrh_picture/mosbrh_picture-0.0.1-SNAPSHOT.jar" ];then
+#            echo "mosbrh_picture.jar exists and is being backup"
+#            mv /home/mosbrh_blog/mosbrh_picture/mosbrh_picture-0.0.1-SNAPSHOT.jar /home/mosbrh_blog/mosbrh_picture/mosbrh_picture-0.0.1-SNAPSHOT.jar.bak
 #          fi
-#          mv /home/transfer_files/mogu_picture-0.0.1-SNAPSHOT.jar /home/mogu_blog/mogu_picture/mogu_picture-0.0.1-SNAPSHOT.jar
+#          mv /home/transfer_files/mosbrh_picture-0.0.1-SNAPSHOT.jar /home/mosbrh_blog/mosbrh_picture/mosbrh_picture-0.0.1-SNAPSHOT.jar
 #
 #
-#          echo "################# mogu_web moving #################"
+#          echo "################# mosbrh_web moving #################"
 #
-#          if [ -f "/home/mogu_blog/mogu_web/mogu_web-0.0.1-SNAPSHOT.jar.bak" ];then
-#            echo "mogu_web.jar.bak exists and is being deleted"
-#            rm -f /home/mogu_blog/mogu_web/mogu_web-0.0.1-SNAPSHOT.jar.bak
+#          if [ -f "/home/mosbrh_blog/mosbrh_web/mosbrh_web-0.0.1-SNAPSHOT.jar.bak" ];then
+#            echo "mosbrh_web.jar.bak exists and is being deleted"
+#            rm -f /home/mosbrh_blog/mosbrh_web/mosbrh_web-0.0.1-SNAPSHOT.jar.bak
 #          fi
-#          if [ -f "/home/mogu_blog/mogu_web/mogu_web-0.0.1-SNAPSHOT.jar" ];then
-#            echo "mogu_web.jar exists and is being backup"
-#            mv /home/mogu_blog/mogu_web/mogu_web-0.0.1-SNAPSHOT.jar /home/mogu_blog/mogu_web/mogu_web-0.0.1-SNAPSHOT.jar.bak
+#          if [ -f "/home/mosbrh_blog/mosbrh_web/mosbrh_web-0.0.1-SNAPSHOT.jar" ];then
+#            echo "mosbrh_web.jar exists and is being backup"
+#            mv /home/mosbrh_blog/mosbrh_web/mosbrh_web-0.0.1-SNAPSHOT.jar /home/mosbrh_blog/mosbrh_web/mosbrh_web-0.0.1-SNAPSHOT.jar.bak
 #          fi
-#          mv /home/transfer_files/mogu_web-0.0.1-SNAPSHOT.jar /home/mogu_blog/mogu_web/mogu_web-0.0.1-SNAPSHOT.jar
+#          mv /home/transfer_files/mosbrh_web-0.0.1-SNAPSHOT.jar /home/mosbrh_blog/mosbrh_web/mosbrh_web-0.0.1-SNAPSHOT.jar
 #
-#          echo "################# mogu_search moving #################"
+#          echo "################# mosbrh_search moving #################"
 #
-#          if [ -f "/home/mogu_blog/mogu_search/mogu_search-0.0.1-SNAPSHOT.jar.bak" ];then
-#            echo "mogu_search.jar.bak exists and is being deleted"
-#            rm -f /home/mogu_blog/mogu_search/mogu_search-0.0.1-SNAPSHOT.jar.bak
+#          if [ -f "/home/mosbrh_blog/mosbrh_search/mosbrh_search-0.0.1-SNAPSHOT.jar.bak" ];then
+#            echo "mosbrh_search.jar.bak exists and is being deleted"
+#            rm -f /home/mosbrh_blog/mosbrh_search/mosbrh_search-0.0.1-SNAPSHOT.jar.bak
 #          fi
-#          if [ -f "/home/mogu_blog/mogu_search/mogu_search-0.0.1-SNAPSHOT.jar" ];then
-#            echo "mogu_search.jar exists and is being backup"
-#            mv /home/mogu_blog/mogu_search/mogu_search-0.0.1-SNAPSHOT.jar /home/mogu_blog/mogu_search/mogu_search-0.0.1-SNAPSHOT.jar.bak
+#          if [ -f "/home/mosbrh_blog/mosbrh_search/mosbrh_search-0.0.1-SNAPSHOT.jar" ];then
+#            echo "mosbrh_search.jar exists and is being backup"
+#            mv /home/mosbrh_blog/mosbrh_search/mosbrh_search-0.0.1-SNAPSHOT.jar /home/mosbrh_blog/mosbrh_search/mosbrh_search-0.0.1-SNAPSHOT.jar.bak
 #          fi
-#          mv /home/transfer_files/mogu_search-0.0.1-SNAPSHOT.jar /home/mogu_blog/mogu_search/mogu_search-0.0.1-SNAPSHOT.jar
+#          mv /home/transfer_files/mosbrh_search-0.0.1-SNAPSHOT.jar /home/mosbrh_blog/mosbrh_search/mosbrh_search-0.0.1-SNAPSHOT.jar
 #
 #
-#          echo "################# vue_mogu_web moving #################"
+#          echo "################# vue_mosbrh_web moving #################"
 #
-#          if [ -d "/home/mogu_blog/vue_mogu_web/dist.bak/" ];then
-#            echo "vue_mogu_web dist.bak exists and is being deleted"
-#            cd /home/mogu_blog/vue_mogu_web
+#          if [ -d "/home/mosbrh_blog/vue_mosbrh_web/dist.bak/" ];then
+#            echo "vue_mosbrh_web dist.bak exists and is being deleted"
+#            cd /home/mosbrh_blog/vue_mosbrh_web
 #            rm -rf dist.bak/
 #          fi
-#          if [ -d "/home/mogu_blog/vue_mogu_web/dist/" ];then
-#            echo "vue_mogu_web dist exists and is being backup"
-#            mv /home/mogu_blog/vue_mogu_web/dist /home/mogu_blog/vue_mogu_web/dist.bak
+#          if [ -d "/home/mosbrh_blog/vue_mosbrh_web/dist/" ];then
+#            echo "vue_mosbrh_web dist exists and is being backup"
+#            mv /home/mosbrh_blog/vue_mosbrh_web/dist /home/mosbrh_blog/vue_mosbrh_web/dist.bak
 #          fi
-#          mv /home/transfer_files/web_dist /home/mogu_blog/vue_mogu_web/dist
+#          mv /home/transfer_files/web_dist /home/mosbrh_blog/vue_mosbrh_web/dist
 #
 #
-#          echo "################# vue_mogu_admin moving #################"
+#          echo "################# vue_mosbrh_admin moving #################"
 #
-#          if [ -d "/home/mogu_blog/vue_mogu_admin/dist.bak/" ];then
-#            echo "vue_mogu_admin dist.bak exists and is being deleted"
-#            cd /home/mogu_blog/vue_mogu_admin
+#          if [ -d "/home/mosbrh_blog/vue_mosbrh_admin/dist.bak/" ];then
+#            echo "vue_mosbrh_admin dist.bak exists and is being deleted"
+#            cd /home/mosbrh_blog/vue_mosbrh_admin
 #            rm -rf dist.bak/
 #          fi
-#          if [ -d "/home/mogu_blog/vue_mogu_admin/dist/" ];then
-#            echo "vue_mogu_admin dist exists and is being backup"
-#            mv /home/mogu_blog/vue_mogu_admin/dist /home/mogu_blog/vue_mogu_admin/dist.bak
+#          if [ -d "/home/mosbrh_blog/vue_mosbrh_admin/dist/" ];then
+#            echo "vue_mosbrh_admin dist exists and is being backup"
+#            mv /home/mosbrh_blog/vue_mosbrh_admin/dist /home/mosbrh_blog/vue_mosbrh_admin/dist.bak
 #          fi
-#          mv /home/transfer_files/admin_dist /home/mogu_blog/vue_mogu_admin/dist
+#          mv /home/transfer_files/admin_dist /home/mosbrh_blog/vue_mosbrh_admin/dist
 #
 #          echo "################# rm transfer_files.tar.gz #################"
 #          rm -rf /home/transfer_files.tar.gz
 #          echo "################# rm transfer_files #################"
 #          rm -rf /home/transfer_files
 #
-#    - name: Start mogu_gateway
+#    - name: Start mosbrh_gateway
 #      uses: appleboy/ssh-action@master
 #      with:
 #        host: ${{ secrets.DOCKER_IP_DEV_NACOS }}
@@ -200,11 +200,11 @@
 #        password: ${{ secrets.DOCKER_PASSWORD }}
 #        port: ${{ secrets.DOCKER_PORT }}
 #        script: |
-#          cd /home/mogu_blog/mogu_gateway/
+#          cd /home/mosbrh_blog/mosbrh_gateway/
 #          ./shutdown.sh
 #          ./startup.sh
 #
-#    - name: Start mogu_picture
+#    - name: Start mosbrh_picture
 #      uses: appleboy/ssh-action@master
 #      with:
 #        host: ${{ secrets.DOCKER_IP_DEV_NACOS }}
@@ -212,10 +212,10 @@
 #        password: ${{ secrets.DOCKER_PASSWORD }}
 #        port: ${{ secrets.DOCKER_PORT }}
 #        script: |
-#          cd /home/mogu_blog/mogu_picture/
+#          cd /home/mosbrh_blog/mosbrh_picture/
 #          ./shutdown.sh
 #          ./startup.sh
-#    - name: Start mogu_admin
+#    - name: Start mosbrh_admin
 #      uses: appleboy/ssh-action@master
 #      with:
 #        host: ${{ secrets.DOCKER_IP_DEV_NACOS }}
@@ -223,10 +223,10 @@
 #        password: ${{ secrets.DOCKER_PASSWORD }}
 #        port: ${{ secrets.DOCKER_PORT }}
 #        script: |
-#          cd /home/mogu_blog/mogu_admin/
+#          cd /home/mosbrh_blog/mosbrh_admin/
 #          ./shutdown.sh
 #          ./startup.sh
-#    - name: Start mogu_sms
+#    - name: Start mosbrh_sms
 #      uses: appleboy/ssh-action@master
 #      with:
 #        host: ${{ secrets.DOCKER_IP_DEV_NACOS }}
@@ -234,10 +234,10 @@
 #        password: ${{ secrets.DOCKER_PASSWORD }}
 #        port: ${{ secrets.DOCKER_PORT }}
 #        script: |
-#          cd /home/mogu_blog/mogu_sms/
+#          cd /home/mosbrh_blog/mosbrh_sms/
 #          ./shutdown.sh
 #          ./startup.sh
-#    - name: Start mogu_web
+#    - name: Start mosbrh_web
 #      uses: appleboy/ssh-action@master
 #      with:
 #        host: ${{ secrets.DOCKER_IP_DEV_NACOS }}
@@ -245,6 +245,6 @@
 #        password: ${{ secrets.DOCKER_PASSWORD }}
 #        port: ${{ secrets.DOCKER_PORT }}
 #        script: |
-#          cd /home/mogu_blog/mogu_web/
+#          cd /home/mosbrh_blog/mosbrh_web/
 #          ./shutdown.sh
 #          ./startup.sh
